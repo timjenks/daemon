@@ -190,24 +190,21 @@ var propertyList = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>KeepAlive</key>
-	<true/>
 	<key>Label</key>
 	<string>{{.Name}}</string>
 	<key>ProgramArguments</key>
 	<array>
 	    <string>{{.Path}}</string>
-		{{range .Args}}<string>{{.}}</string>
-		{{end}}
+	    <string>start</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
-    <key>WorkingDirectory</key>
-    <string>/usr/local/var</string>
+	<key>KeepAlive</key>
+	<true/>
     <key>StandardErrorPath</key>
-    <string>/usr/local/var/log/{{.Name}}.err</string>
+    <string>var/log/otp/otpd.err</string>
     <key>StandardOutPath</key>
-    <string>/usr/local/var/log/{{.Name}}.log</string>
+    <string>/var/log/otp/otpd.log</string>
 </dict>
 </plist>
 `
